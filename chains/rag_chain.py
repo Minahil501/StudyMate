@@ -63,7 +63,8 @@ separately -- which is exactly what app.py was doing on every chat message:
 one retrieval to build the sources list, then a second, fully redundant
 retrieval inside `rag_chain.invoke()` for the same question. With a
 hybrid (BM25 + FAISS) retriever, that's 2x BM25 scoring, 2x embed_query()
-calls to Ollama, 2x FAISS search, and 2x ensemble merge -- every message.
+calls to the embedding API, 2x FAISS search, and 2x ensemble merge -- every
+message.
 
 This version takes already-retrieved documents as input instead of a
 retriever, so retrieval happens exactly ONCE per question, and the caller

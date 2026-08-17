@@ -3,7 +3,7 @@ from processing.text_cleaner import TextCleaner
 from processing.headings import HeadingSplitter
 from processing.splitters import splitter
 
-from embeddings.ollama_embeddings import embeddings
+from embeddings.huggingface_embeddings import embeddings
 
 doc1 = DocumentLoader.load("uploads/sample.pdf")
 doc2 =DocumentLoader.load("uploads/sample.txt")

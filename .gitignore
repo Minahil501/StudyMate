@@ -8,3 +8,4 @@ uploads/*
 .venv/
 env1/
 *.egg-info/
+.env

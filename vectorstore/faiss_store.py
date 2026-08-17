@@ -1,7 +1,7 @@
 from langchain_community.vectorstores import FAISS
 
 from config import VECTOR_DB_PATH
-from embeddings.ollama_embeddings import embeddings
+from embeddings.huggingface_embeddings import embeddings
 
 
 class VectorStoreService:

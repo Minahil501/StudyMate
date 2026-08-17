@@ -42,7 +42,7 @@ from config import (
     QUIZ_DIFFICULTIES,
     UPLOAD_FOLDER,
 )
-from llm.ollama_llm import generative_llm, llm
+from llm.huggingface_llm import generative_llm, llm
 from pipeline import process_documents
 from retriever.retriever import RetrieverService
 from vectorstore.faiss_store import VectorStoreService
@@ -1285,7 +1285,7 @@ def render_settings_page():
         st.markdown(
             """<div class="sm-tile">
                 <div class="t-ico">🧠</div><div class="t-title">AI Model</div>
-                <div class="t-sub">Retrieval runs through your configured Ollama models (chat + generative chains).</div>
+                <div class="t-sub">Retrieval runs through your configured Hugging Face models (chat + generative chains).</div>
             </div>""",
             unsafe_allow_html=True,
         )

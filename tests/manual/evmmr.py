@@ -10,7 +10,7 @@ from processing.analyzer import DocumentAnalyzer
 from processing.semantic_chunks import SemanticChunker
 from processing.validator import ChunkValidator
 from chains.rag_chain import build_rag_chain
-from llm.ollama_llm import llm
+from llm.huggingface_llm import llm
 
 docs = DocumentLoader.load("uploads/sample.pdf")
 

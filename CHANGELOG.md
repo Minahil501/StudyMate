@@ -75,8 +75,7 @@
 ## To run
 ```
 pip install -r requirements.txt
-ollama pull llama3.2:3b
-ollama pull nomic-embed-text
+cp .env.example .env   # add your HUGGINGFACEHUB_API_TOKEN
 streamlit run app.py
 ```
 
@@ -85,3 +84,42 @@ To run the test suite:
 pip install -r requirements-dev.txt
 pytest
 ```
+
+## Deployment: Ollama -> Hugging Face Inference API
+
+The LLM and embeddings backend originally talked to a locally-running
+Ollama server (`llama3.2:3b` + `nomic-embed-text`). That's fine for
+local development, but Streamlit Community Cloud only hosts the
+Streamlit process itself -- there's no way to also run Ollama alongside
+it, so a public deployment had nothing to connect to.
+
+Swapped both `llm/ollama_llm.py` and `embeddings/ollama_embeddings.py`
+(renamed to `llm/huggingface_llm.py` / `embeddings/huggingface_embeddings.py`)
+for Hugging Face's hosted Inference API:
+- LLM: `ChatHuggingFace` wrapping `HuggingFaceEndpoint`
+  (`Qwen/Qwen2.5-7B-Instruct` by default). `ChatHuggingFace` is a real
+  LangChain `BaseChatModel`, so `.with_structured_output(Schema)` in
+  `chains/study_chains.py` needed no changes.
+- Embeddings: `HuggingFaceEndpointEmbeddings`
+  (`sentence-transformers/all-MiniLM-L6-v2` by default), which calls the
+  Inference API remotely -- no local model download, no torch install.
+
+Requires a free Hugging Face access token (`HUGGINGFACEHUB_API_TOKEN`,
+via `.env` locally or Streamlit Cloud Secrets in production).
+
+Also removed `spacy`, `unstructured`, and both packages' otherwise-unused
+transitive dependency trees (31 pinned lines) from `requirements.txt` --
+neither is ever imported by this codebase (document loading is hand-rolled
+directly on `pdfplumber`/`python-docx` in `loaders/loaders_factory.py`),
+and `spacy==3.8.14` specifically doesn't exist on PyPI, which is what broke
+the first deploy attempt. Added `runtime.txt` pinning Python 3.13 to match
+local dev, since the rest of the pinned list is an exact `pip freeze` of
+compiled packages that may not have wheels yet for a brand-new Python
+version.
+
+Known caveat: unlike Ollama's native structured-output support,
+`.with_structured_output()` on the Inference API depends on the chosen
+model/provider actually supporting tool calling. If you swap `LLM_MODEL`
+(`config.py`) for a model without solid tool-calling support,
+Flashcards/Quiz/Notes generation may degrade even though plain chat still
+works.

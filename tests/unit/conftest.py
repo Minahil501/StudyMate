@@ -3,12 +3,13 @@ conftest.py
 
 Shared fixtures for the test suite.
 
-Why fakes instead of real Ollama calls
-----------------------------------------
-These tests need to run in CI / on a machine without Ollama installed or
-running. Everything that depends on real model output (embedding quality,
-generated flashcard wording, etc.) is out of scope for unit tests here --
-that's an integration/manual-QA concern. What IS tested automatically:
+Why fakes instead of real Hugging Face API calls
+--------------------------------------------------
+These tests need to run in CI / on a machine without a Hugging Face
+access token configured. Everything that depends on real model output
+(embedding quality, generated flashcard wording, etc.) is out of scope
+for unit tests here -- that's an integration/manual-QA concern. What IS
+tested automatically:
 loading, table extraction, chunking rules, retriever wiring, chain
 composition, and schema validation.
 """
@@ -52,7 +53,7 @@ class FakeEmbeddings(Embeddings):
     Deterministic fake embedding model: same text always maps to the same
     vector, different text maps to different vectors (via hashing), so
     FAISS similarity search behaves consistently across test runs without
-    ever calling a real Ollama server.
+    ever calling the real Hugging Face API.
 
     Must subclass `Embeddings` (not just duck-type embed_documents/
     embed_query) -- langchain_community's FAISS wrapper does an explicit

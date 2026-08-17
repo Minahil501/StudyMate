@@ -3,22 +3,41 @@ Global configuration for StudyMate AI.
 All project-wide constants are stored here.
 """
 
+from dotenv import load_dotenv
+
+# Loads HUGGINGFACEHUB_API_TOKEN (and anything else in a local .env) into
+# the environment before llm/huggingface_llm.py or
+# embeddings/huggingface_embeddings.py read it. No-op if there's no .env
+# file (e.g. on Streamlit Cloud, where secrets are injected as real env
+# vars directly).
+load_dotenv()
+
 # ==========================
 # LLM Configuration
 # ==========================
 
-LLM_MODEL = "llama3.2:3b"
+# Served via Hugging Face's hosted Inference API (see llm/huggingface_llm.py)
+# rather than a local Ollama server, so the app also works on hosting that
+# has no local model server -- e.g. Streamlit Community Cloud. Requires a
+# free Hugging Face access token set as the HUGGINGFACEHUB_API_TOKEN
+# environment variable (locally: a .env file; on Streamlit Cloud: the app's
+# Secrets). Get one at https://huggingface.co/settings/tokens.
+LLM_MODEL = "Qwen/Qwen2.5-7B-Instruct"
 
 # Slightly higher temperature for creative-generation features
 # (flashcards / quiz / notes) where a bit of variety in phrasing is fine.
-# Keep the default RAG chat LLM deterministic (see llm/ollama_llm.py).
+# Keep the default RAG chat LLM deterministic (see llm/huggingface_llm.py).
 GENERATIVE_TEMPERATURE = 0.4
 
 # ==========================
 # Embedding Configuration
 # ==========================
 
-EMBEDDING_MODEL = "nomic-embed-text"
+# Also served via Hugging Face's hosted Inference API (see
+# embeddings/huggingface_embeddings.py) -- same HUGGINGFACEHUB_API_TOKEN
+# as above. all-MiniLM-L6-v2 is small, fast, and widely available on the
+# free tier.
+EMBEDDING_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
 
 # ==========================
 # Text Splitter

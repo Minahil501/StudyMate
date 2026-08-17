@@ -3,7 +3,7 @@
 An AI-powered learning companion built using:
 
 - LangChain (+ langchain-classic, for EnsembleRetriever)
-- Ollama (llama3.2:3b + nomic-embed-text)
+- Hugging Face Inference API (Qwen2.5-7B-Instruct + all-MiniLM-L6-v2)
 - FAISS (+ BM25 hybrid retrieval)
 - Streamlit
 
@@ -34,14 +34,21 @@ See `CHANGELOG.md` for what changed in the latest pass and why.
 
 ## Run it
 
+Get a free Hugging Face access token at
+[huggingface.co/settings/tokens](https://huggingface.co/settings/tokens),
+then:
+
 ```bash
 pip install -r requirements.txt
 
-ollama pull llama3.2:3b
-ollama pull nomic-embed-text
+cp .env.example .env
+# edit .env and paste your token into HUGGINGFACEHUB_API_TOKEN
 
 streamlit run app.py
 ```
+
+Deploying to Streamlit Community Cloud: set `HUGGINGFACEHUB_API_TOKEN` in
+the app's Secrets instead of using a `.env` file.
 
 ## Run the tests
 
@@ -58,8 +65,8 @@ pipeline.py       Single ingestion orchestrator (load -> clean -> chunk -> valid
 config.py         All project-wide constants
 loaders/          Multi-format loading with table extraction (PDF/DOCX/TXT)
 processing/       Text cleaning, structural analysis, semantic chunking, splitting, validation
-embeddings/       Ollama embeddings wrapper
-llm/              Ollama LLM wrappers (deterministic + generative variants)
+embeddings/       Hugging Face embeddings wrapper
+llm/              Hugging Face LLM wrappers (deterministic + generative variants)
 vectorstore/      FAISS wrapper (tracks raw docs for hybrid search)
 retriever/        Similarity / MMR / hybrid (BM25 + FAISS) retrieval
 schemas/          Pydantic schemas for structured LLM output
@@ -68,7 +75,7 @@ chains/           LCEL chain builders
 utils/            Formatting helpers
 db/faiss_index/   Generated vector store (gitignored, rebuilt on ingestion)
 uploads/          Uploaded source documents (gitignored)
-tests/unit/       Automated pytest suite (no live Ollama server required)
+tests/unit/       Automated pytest suite (no live Hugging Face token required)
 tests/fixtures/   3 generated sample documents used by the tests
-tests/manual/     Original exploratory scripts (need a live Ollama server)
+tests/manual/     Original exploratory scripts (need a real Hugging Face token)
 ```

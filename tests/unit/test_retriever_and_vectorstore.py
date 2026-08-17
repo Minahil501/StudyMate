@@ -7,12 +7,12 @@ from vectorstore.faiss_store import VectorStoreService
 def _build_indexed_store(fake_embeddings, monkeypatch):
     """
     VectorStoreService imports the real `embeddings` singleton (which wraps
-    OllamaEmbeddings) at module load time. We monkeypatch its underlying
-    `embedding_model` attribute with our fake so `.create()` never touches
-    a real Ollama server.
+    HuggingFaceEndpointEmbeddings) at module load time. We monkeypatch its
+    underlying `embedding_model` attribute with our fake so `.create()`
+    never touches a real Hugging Face API call.
     """
 
-    import embeddings.ollama_embeddings as embeddings_module
+    import embeddings.huggingface_embeddings as embeddings_module
 
     monkeypatch.setattr(embeddings_module.embeddings, "embedding_model", fake_embeddings)
 

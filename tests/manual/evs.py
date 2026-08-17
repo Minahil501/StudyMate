@@ -7,7 +7,7 @@ from vectorstore.faiss_store import vector_store
 
 from retriever.retriever import RetrieverService
 from chains.rag_chain import build_rag_chain
-from llm.ollama_llm import llm
+from llm.huggingface_llm import llm
 
 
 # ==========================================================
