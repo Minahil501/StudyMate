@@ -35,6 +35,15 @@ swap LLM_MODEL (config.py) for a model without solid tool-calling
 support, Flashcards/Quiz/Notes generation may degrade or fail even
 though plain chat still works -- test those three features after
 changing it.
+
+`provider="hf-inference"` is pinned below for the same reason as
+embeddings/huggingface_embeddings.py: leaving `provider` unset routes
+through Hugging Face's third-party "Inference Providers" marketplace
+(Together, Fireworks, Groq, ...) rather than HF's own free serverless
+inference, which is what actually broke this in production. If
+LLM_MODEL isn't available on hf-inference specifically, you'll get a
+different error (model not found for that provider) -- swap to a model
+that is, or switch `provider` to one you're deliberately paying for.
 """
 
 from langchain_huggingface import ChatHuggingFace, HuggingFaceEndpoint
@@ -56,6 +65,7 @@ class LLMService:
     def __init__(self, temperature: float = 0.2):
         endpoint = HuggingFaceEndpoint(
             repo_id=LLM_MODEL,
+            provider="hf-inference",
             temperature=temperature,
             max_new_tokens=MAX_NEW_TOKENS,
         )

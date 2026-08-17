@@ -19,6 +19,19 @@ handed straight to FAISS without a custom wrapper around it.
 
 Requires the same HUGGINGFACEHUB_API_TOKEN environment variable as
 llm/huggingface_llm.py -- see that module's docstring for how to set it.
+
+Why `provider="hf-inference"` is explicit
+-------------------------------------------
+`huggingface_hub`/`langchain_huggingface` now route through Hugging
+Face's "Inference Providers" marketplace (third-party backends like
+Together, Fireworks, Groq, ...) when `provider` is left unset, instead
+of Hugging Face's own free serverless inference. Those third-party
+providers generally don't serve plain feature-extraction/embedding
+models at all, and can require billing to be configured on your HF
+account even when they do -- which is very likely what actually broke
+document upload in production. Pinning `provider="hf-inference"` forces
+requests through HF's own infrastructure, which is what's actually free
+and is what the model name in config.py was chosen for.
 """
 
 from langchain_huggingface import HuggingFaceEndpointEmbeddings
@@ -37,7 +50,10 @@ class EmbeddingService:
 
     def __init__(self, model: str = EMBEDDING_MODEL):
         self.model = model
-        self.embedding_model = HuggingFaceEndpointEmbeddings(model=model)
+        self.embedding_model = HuggingFaceEndpointEmbeddings(
+            model=model,
+            provider="hf-inference",
+        )
 
 
 embeddings = EmbeddingService()
