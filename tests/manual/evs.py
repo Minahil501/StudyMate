@@ -172,7 +172,7 @@ for index, test in enumerate(test_cases, start=1):
 
         if len(results) == 0:
 
-            print("✅ PASS - No documents retrieved")
+            print("[PASS] No documents retrieved")
 
             passed += 1
 
@@ -223,13 +223,13 @@ for index, test in enumerate(test_cases, start=1):
 
         if score >= 0.5:
 
-            print("✅ PASS")
+            print("[PASS]")
 
             passed += 1
 
         else:
 
-            print("❌ FAIL")
+            print("[FAIL]")
 
 
 

@@ -26,7 +26,7 @@ class ChunkValidator:
 
             # Empty chunk
             if not chunk.page_content.strip():
-                print(f"❌ Chunk {index} is empty.")
+                print(f"[FAIL] Chunk {index} is empty.")
                 errors += 1
 
             # Too large. Tables are intentionally allowed to exceed
@@ -36,7 +36,7 @@ class ChunkValidator:
 
             if len(chunk.page_content) > size_limit:
                 print(
-                    f"❌ Chunk {index} exceeds "
+                    f"[FAIL] Chunk {index} exceeds "
                     f"{size_limit} characters "
                     f"({len(chunk.page_content)})."
                 )
@@ -44,20 +44,20 @@ class ChunkValidator:
 
             # Missing source
             if "source" not in chunk.metadata:
-                print(f"❌ Chunk {index} missing source metadata.")
+                print(f"[FAIL] Chunk {index} missing source metadata.")
                 errors += 1
 
             # Missing page
             if "page" not in chunk.metadata:
-                print(f"❌ Chunk {index} missing page metadata.")
+                print(f"[FAIL] Chunk {index} missing page metadata.")
                 errors += 1
 
         print()
 
         if errors == 0:
-            print("✅ All chunks passed validation.")
+            print("[OK] All chunks passed validation.")
         else:
-            print(f"⚠ Found {errors} issue(s).")
+            print(f"[WARN] Found {errors} issue(s).")
 
         print("=" * 80)
 
