@@ -1,0 +1,27 @@
+IEEE CS UCP Student Branch - Think2Code 2.0 Event Notes
+
+Overview
+--------
+Think2Code 2.0 is a competitive programming event organized to give
+students hands-on experience with algorithmic problem solving under
+time pressure, similar in spirit to contests like Codeforces or ICPC
+regionals.
+
+Rules
+-----
+- Teams of up to 2 members.
+- 5 problems, 3 hours.
+- Partial scoring is enabled for partially correct submissions.
+- Standard time/memory limits: 1-2 seconds, 256 MB.
+
+Judging Criteria
+-----------------
+Submissions are judged automatically against hidden test cases. Ties
+on score are broken by total submission time, with a penalty added
+for every incorrect attempt on a problem that is eventually solved.
+
+Why This Matters for Preparation
+---------------------------------
+Practicing under a similar format (multiple problems, a hard time
+limit, and a penalty for wrong attempts) is the best way to simulate
+contest pressure before the actual event.

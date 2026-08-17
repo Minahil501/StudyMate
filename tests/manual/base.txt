@@ -1,0 +1,376 @@
+Strategy: Similarity Search
+
+TOP_K:
+4
+
+Chunk Size:
+700
+
+Chunk Overlap:
+120
+
+
+Results:
+
+Passed:
+X/5
+
+Accuracy:
+XX%
+
+================================================================================
+VALIDATING CHUNKS
+================================================================================
+
+✅ All chunks passed validation.
+================================================================================
+
+
+==========================================================================================
+TEST CASE 1
+==========================================================================================
+
+Question:
+What is Organizational Structure?
+
+Retrieved Chunks:
+--------------------------------------------------
+Chunk 1
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 0, 'page_label': '1', 'chunk_id': 1, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Week 11 — Organizational Structure in Tech Companies 
+What is Organizational Structure? 
+• The formal system that defines: 
+• hierarchy 
+• roles/responsibilities 
+• authority 
+• communication flow 
+• Helps coordinate work and decision-making. 
+ 
+Why Tech Companies Need Organizational Structure 
+• Cl
+--------------------------------------------------
+Chunk 2
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 11, 'page_label': '12', 'chunk_id': 15, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+How does organizational structure affect innovation? 
+Organizational structure affects: 
+• communication 
+• collaboration 
+• decision-making speed 
+• employee freedom 
+Functional Structure 
+• Innovation is slower because departments work separately (silos). 
+• Less cross-team collaboration. 
+Matrix 
+--------------------------------------------------
+Chunk 3
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 3, 'page_label': '4', 'chunk_id': 6, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Apple 
+• Functional structure 
+• Strong expertise integration 
+• Innovations: iPhone, M1 chip 
+• Challenge: centralized decisions
+--------------------------------------------------
+Chunk 4
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 5, 'page_label': '6', 'chunk_id': 8, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+2. Core values 
+3. Leadership style 
+4. Communication patterns 
+5. Work environment 
+ 
+Types of Organizational Culture 
+Clan Culture 
+• Family-like 
+• Teamwork & mentoring 
+Adhocracy Culture 
+• Innovation-focused 
+• Risk-taking encouraged 
+Market Culture 
+• Competitive 
+• Results-oriented 
+Hierarchy
+
+Evaluation:
+Keyword Match: 100.00%
+Matched: ['hierarchy', 'roles', 'responsibilities', 'authority']
+✅ PASS
+
+
+==========================================================================================
+TEST CASE 2
+==========================================================================================
+
+Question:
+Why do tech companies need organizational structure?
+
+Retrieved Chunks:
+--------------------------------------------------
+Chunk 1
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 0, 'page_label': '1', 'chunk_id': 1, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Week 11 — Organizational Structure in Tech Companies 
+What is Organizational Structure? 
+• The formal system that defines: 
+• hierarchy 
+• roles/responsibilities 
+• authority 
+• communication flow 
+• Helps coordinate work and decision-making. 
+ 
+Why Tech Companies Need Organizational Structure 
+• Cl
+--------------------------------------------------
+Chunk 2
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 11, 'page_label': '12', 'chunk_id': 16, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+• fewer management layers 
+• faster communication 
+• employee empowerment 
+• Employees can experiment freely. 
+Overall 
+Flexible structures increase innovation, while rigid structures improve stability but may slow 
+creativity. 
+ 
+Why do employees resist technology? 
+Employees resist technology beca
+--------------------------------------------------
+Chunk 3
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 11, 'page_label': '12', 'chunk_id': 15, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+How does organizational structure affect innovation? 
+Organizational structure affects: 
+• communication 
+• collaboration 
+• decision-making speed 
+• employee freedom 
+Functional Structure 
+• Innovation is slower because departments work separately (silos). 
+• Less cross-team collaboration. 
+Matrix 
+--------------------------------------------------
+Chunk 4
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 3, 'page_label': '4', 'chunk_id': 6, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Apple 
+• Functional structure 
+• Strong expertise integration 
+• Innovations: iPhone, M1 chip 
+• Challenge: centralized decisions
+
+Evaluation:
+Keyword Match: 100.00%
+Matched: ['communication', 'decision-making', 'growth', 'innovation']
+✅ PASS
+
+
+==========================================================================================
+TEST CASE 3
+==========================================================================================
+
+Question:
+What are advantages of Functional Structure?
+
+Retrieved Chunks:
+--------------------------------------------------
+Chunk 1
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 10, 'page_label': '11', 'chunk_id': 13, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Advantages/Disadvantages 
+• Pros/cons of Flat structure 
+• Pros/cons of Matrix structure 
+• Why Functional structure improves productivity 
+ 
+Conceptual Questions 
+• How does structure affect innovation? 
+• Why do employees resist technology? 
+• Why is cultural readiness important? 
+• How can compan
+--------------------------------------------------
+Chunk 2
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 0, 'page_label': '1', 'chunk_id': 2, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Features 
+• Clear hierarchy 
+• Specialized departments 
+• Defined responsibilities 
+Advantages 
+• High efficiency 
+• Expertise development 
+• Easy management
+--------------------------------------------------
+Chunk 3
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 3, 'page_label': '4', 'chunk_id': 6, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Apple 
+• Functional structure 
+• Strong expertise integration 
+• Innovations: iPhone, M1 chip 
+• Challenge: centralized decisions
+--------------------------------------------------
+Chunk 4
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 2, 'page_label': '3', 'chunk_id': 4, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+• Open communication 
+• Employee empowerment 
+• Fast decisions 
+Advantages 
+• Agile 
+• Encourages creativity 
+• Rapid innovation 
+Disadvantages 
+• Role overlap 
+• Difficult scaling 
+• Coordination problems 
+Best For 
+• Startups/small tech teams 
+ 
+Comparison of Structures 
+Structure Innovation Produ
+
+Evaluation:
+Keyword Match: 100.00%
+Matched: ['efficiency', 'expertise', 'management']
+✅ PASS
+
+
+==========================================================================================
+TEST CASE 4
+==========================================================================================
+
+Question:
+What are disadvantages of Functional Structure?
+
+Retrieved Chunks:
+--------------------------------------------------
+Chunk 1
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 10, 'page_label': '11', 'chunk_id': 13, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Advantages/Disadvantages 
+• Pros/cons of Flat structure 
+• Pros/cons of Matrix structure 
+• Why Functional structure improves productivity 
+ 
+Conceptual Questions 
+• How does structure affect innovation? 
+• Why do employees resist technology? 
+• Why is cultural readiness important? 
+• How can compan
+--------------------------------------------------
+Chunk 2
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 0, 'page_label': '1', 'chunk_id': 2, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Features 
+• Clear hierarchy 
+• Specialized departments 
+• Defined responsibilities 
+Advantages 
+• High efficiency 
+• Expertise development 
+• Easy management
+--------------------------------------------------
+Chunk 3
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 1, 'page_label': '2', 'chunk_id': 3, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Disadvantages 
+• Department silos 
+• Weak cross-team communication 
+• Slower innovation 
+Best For 
+• Medium/large stable companies 
+ 
+2. Matrix Structure 
+Employees report to both: 
+• functional manager 
+• project manager 
+Features 
+• Cross-department collaboration 
+• Shared resources 
+• Multiple si
+--------------------------------------------------
+Chunk 4
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 3, 'page_label': '4', 'chunk_id': 6, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Apple 
+• Functional structure 
+• Strong expertise integration 
+• Innovations: iPhone, M1 chip 
+• Challenge: centralized decisions
+
+Evaluation:
+Keyword Match: 100.00%
+Matched: ['silos', 'communication', 'innovation']
+✅ PASS
+
+
+==========================================================================================
+TEST CASE 5
+==========================================================================================
+
+Question:
+What is the salary of a software engineer?
+
+Retrieved Chunks:
+--------------------------------------------------
+Chunk 1
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 9, 'page_label': '10', 'chunk_id': 12, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Technology should: 
+• empower employees 
+• not replace creativity/empathy 
+• maintain ethics 
+ 
+Creating a Tech-Positive Culture 
+• Encourage curiosity 
+• Improve digital skills 
+• Support tech advocates 
+ 
+Checklist for Successful Integration 
+1. Define goals 
+2. Assess readiness 
+3. Train employee
+--------------------------------------------------
+Chunk 2
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 0, 'page_label': '1', 'chunk_id': 2, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Features 
+• Clear hierarchy 
+• Specialized departments 
+• Defined responsibilities 
+Advantages 
+• High efficiency 
+• Expertise development 
+• Easy management
+--------------------------------------------------
+Chunk 3
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 3, 'page_label': '4', 'chunk_id': 6, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+Apple 
+• Functional structure 
+• Strong expertise integration 
+• Innovations: iPhone, M1 chip 
+• Challenge: centralized decisions
+--------------------------------------------------
+Chunk 4
+{'producer': 'Microsoft® Word for Microsoft 365', 'creator': 'Microsoft® Word for Microsoft 365', 'creationdate': '2026-05-12T23:40:09+05:00', 'author': 'L1S23BSCS0056 - Minahil Kamran', 'moddate': '2026-05-12T23:40:09+05:00', 'source': 'uploads/sample.pdf', 'total_pages': 14, 'page': 12, 'page_label': '13', 'chunk_id': 18, 'total_chunks': 19, 'chunk_size': 700, 'chunk_overlap': 120}
+properly. 
+ 
+How can companies overcome resistance? 
+Companies can reduce resistance by: 
+1. Clear Communication 
+Explain: 
+• why the change is happening 
+• benefits of the technology 
+2. Training and Support 
+Provide: 
+• workshops 
+• hands-on practice 
+• technical help 
+3. Employee Involvement 
+Inc
+
+Evaluation:
+⚠ REVIEW - Documents retrieved
+
+
+==========================================================================================
+FINAL RESULT
+==========================================================================================
+Passed 4/5 tests
+Accuracy: 80.00%
+
+
+docs = DocumentLoader.load("uploads/sample.pdf")
+
+docs = TextCleaner.clean(docs)
+
+analyzed = DocumentAnalyzer.analyze(docs)
+
+semantic_docs = SemanticChunker.build(analyzed)
+
+chunks = splitter.split(semantic_docs)
+
+Validator.validate(chunks)
