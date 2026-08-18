@@ -683,7 +683,18 @@ def process_uploaded_files(uploaded_files) -> None:
 
     with st.spinner("Embedding chunks and building the vector store..."):
         vs_service = VectorStoreService()
-        vs_service.create(chunks)
+        try:
+            vs_service.create(chunks)
+        except Exception as exc:
+            # Streamlit Cloud's default uncaught-exception screen redacts
+            # the real message ("to prevent data leaks") and only writes
+            # it to the app's server-side logs, which are easy to miss.
+            # Catching here and rendering with st.exception() shows the
+            # actual error (e.g. the Hugging Face API's real HTTP status
+            # and response body) directly in the UI instead.
+            st.error("Embedding failed -- see the full error below.")
+            st.exception(exc)
+            st.stop()
 
     st.session_state.chunks = chunks
     st.session_state.processed_files = [Path(p).name for p in saved_paths]
